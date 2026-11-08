@@ -126,9 +126,38 @@ main {
 
 .skills{
   margin-left: 50px;
+  padding-left: 50px;
+  border-left: 1px solid #333;
 }
 
 .skills h2 span{
   color: rgb(0, 162, 255);
   font-weight: bold;
+}
+
+.about-row{
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  padding: 7px 0;
+  border-bottom: 1px solid #333;
+}
+
+/* Skills */
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  height: 42px;
+  padding: 0 10px;
+
+  border: 1px solid #354252;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
