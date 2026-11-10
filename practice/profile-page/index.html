@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile-page</title>
+  <!-- 自作CSS -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
   <header>
@@ -16,9 +21,8 @@
       <ul>
         <li><a href="#Home">Home</a></li>
         <li><a href="#About">About</a></li>
+        <li><a href="#Skills">Skills</a></li>
         <li><a href="#Hobbies">Hobbies</a></li>
-        <li><a href="#Works">Works</a></li>
-        <li><a href="#Contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -36,29 +40,32 @@
   <main>
     <section id="About" class="myinfo content">
       <div class="mypic">
-        <img src="C:\Users\kato-\OneDrive\ドキュメント\web-engineer-26weeks\practice\profile-page\images\mypic.jpg" alt="">
+        <img src="./images/mypic.jpg" alt="">
       </div>
       <div class="about-me">
         <h2><span>/</span>   About me</h2>
-        <div class="about-row">
-          <dt>名前</dt>
-          <dd>Uma</dd>
-        </div>
-        <div class="about-row">
-          <dt>職業</dt>
-          <dd>メーカー 生産技術</dd>
-        </div>
-        <div class="about-row">
-          <dt>好きなこと</dt>
-          <dd>ゴルフ・登山・居酒屋・カメラ</dd>
-        </div>
-        <div class="about-row">
-          <dt>ひとこと</dt>
-          <dd>
-            半年後、webエンジニアへの転職を目指しています<br>
-            最近はレイクレにハマっています  
-          </dd>
-        </div>
+        <dl>
+          <div class="about-row">
+            <dt>名前</dt>
+            <dd>Uma</dd>
+          </div>
+          <div class="about-row">
+            <dt>職業</dt>
+            <dd>メーカー 生産技術</dd>
+          </div>
+          <div class="about-row">
+            <dt>好きなこと</dt>
+            <dd>ゴルフ・登山・旅行・カメラ</dd>
+          </div>
+          <div class="about-row">
+            <dt>ひとこと</dt>
+            <dd>
+              半年後、webエンジニアへの転職を目指しています<br>
+              最近はレイクレにハマっています  
+            </dd>
+          </div>
+        </dl>
+        
       </div>
       <section class="skills" id="Skills">
         <h2><span>/</span>  Skills</h2>
@@ -95,11 +102,65 @@
             <img src="./images/apps-logo/docker-original.svg" alt="">
             <span>Docker</span>
           </div>
+        </div>
       </section>
+    </section>
+    <section id="Hobbies" class="hobbie content">
+      <h2><span>/</span>  Hobbies</h2>
+      <div class="golf">
+        <h3 class="hobbie-title">ゴルフ</h3>
+        <img src="./images/hobbies/golf1.jpg" alt="">
+      </div>
+      <div class="tozan">
+        <h3 class="hobbie-title">登山</h3>
+        <img src="./images/hobbies/tozan.jpg" alt="">
+      </div>
+      <div class="travel">
+        <h3 class="hobbie-title">旅行</h3>
+        <img src="./images/hobbies/travel.jpg" alt="">
+      </div>
     </section>
   </main>
   <footer>
+    <div class="footer-inner">
 
+      <!-- ロゴ -->
+      <a href="#Home" class="footer-logo">
+        <span class="footer-icon">&lt;/&gt;</span>
+        <span>My Profile</span>
+      </a>
+
+      <!-- ナビゲーション -->
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Hobbies">Hobbies</a></li>
+          <li><a href="#Works">Works</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- SNSとコピーライト -->
+      <div class="footer-right">
+        <div class="footer-sns">
+          <a href="https://github.com/" aria-label="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://x.com/" aria-label="X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="https://www.instagram.com/" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </div>
+
+        <p class="copyright">
+          &copy; 2026 My Profile. All rights reserved.
+        </p>
+      </div>
+
+    </div>
   </footer>
 </body>
 </html>

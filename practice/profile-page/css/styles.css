@@ -88,11 +88,18 @@ main {
 
 /* About*/
 #About {
-  display:flex;
+  display: grid;
+  grid-template-columns:
+    200px minmax(0, 1fr) minmax(320px, 1fr);
+  gap: 30px;
+  align-items: start;
 }
 
-.content{
-  padding: 30px 100px;
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 24px;
   color: white;
 }
 
@@ -115,8 +122,9 @@ main {
   filter: brightness(0.85) contrast(1.1);
 }
 
-.about-me{
-  margin-left: 50px;
+.about-me {
+  margin-left: 0;
+  min-width: 0;
 }
 
 .about-me span{
@@ -124,10 +132,11 @@ main {
   font-weight: bold;
 }
 
-.skills{
-  margin-left: 50px;
-  padding-left: 50px;
+.skills {
+  margin-left: 0;
+  padding-left: 30px;
   border-left: 1px solid #333;
+  min-width: 0;
 }
 
 .skills h2 span{
@@ -143,10 +152,12 @@ main {
 }
 
 /* Skills */
-.skills-grid{
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 150px), 1fr));
   gap: 10px;
+  margin-top: 15px;
 }
 
 .skill-item {
@@ -154,10 +165,176 @@ main {
   align-items: center;
   gap: 10px;
 
-  height: 42px;
-  padding: 0 10px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 8px 10px;
 
   border: 1px solid #354252;
   border-radius: 8px;
-  box-sizing: border-box;
+}
+
+.skill-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+/* hobbies */
+
+
+.hobbie span{
+  color: rgb(0, 162, 255);
+  font-weight: bold;
+}
+
+/* Hobbies */
+.hobbie {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* 見出しを横3列分に広げる */
+.hobbie > h2 {
+  grid-column: 1 / -1;
+}
+
+/* 各写真の共通設定 */
+.hobbie img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 趣味のタイトル */
+.hobbie-title {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+/* footer */
+/* ====================
+   Footer
+==================== */
+
+footer {
+  width: 100%;
+  background-color: #0b111c;
+  border-top: 1px solid #344456;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  min-height: 70px;
+  margin: 0 auto;
+  padding: 15px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* ロゴ */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-icon {
+  color: rgb(0, 162, 255);
+  font-size: 28px;
+}
+
+/* ナビゲーション */
+.footer-nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.footer-nav a {
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+  margin-right: 0;
+  white-space: nowrap;
+}
+
+.footer-nav a:hover {
+  color: rgb(0, 162, 255);
+}
+
+/* SNSとコピーライト */
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-sns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-sns a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.footer-sns a:hover {
+  color: rgb(0, 162, 255);
+}
+
+.copyright {
+  border-left: 1px solid #344456;
+  padding-left: 30px;
+
+  color: #aeb8c6;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* 画面が狭い場合 */
+@media (max-width: 1100px) {
+  .footer-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .copyright {
+    border-left: none;
+    padding-left: 0;
+    white-space: normal;
+    text-align: center;
+  }
 }
